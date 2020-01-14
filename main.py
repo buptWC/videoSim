@@ -14,6 +14,6 @@ myVideoPlayer = VideoPlayer(
     debug=Debug
 )
 myVideoPlayer.reset()
-myVideoPlayer.playing()
+myVideoPlayer.playVideo()
 myVideoPlayer.show()
 myVideoPlayer.result()

@@ -9,10 +9,11 @@ def load_network_trace(network_file_path):
     network_file_list = os.listdir(network_file_path)
     all_time_record = []
     all_thr_record = []
+    all_file_record = []
     for network_file in network_file_list:
         time_record = []
         thr_record = []
-        with open(network_file, 'r', encoding='utf-8') as f:
+        with open(network_file_path + network_file, 'r', encoding='utf-8') as f:
             while True:
                 line = f.readline().strip('\n')
                 if not line: break
@@ -21,6 +22,7 @@ def load_network_trace(network_file_path):
                 thr_record.append(throughput)
         all_time_record.append(time_record)
         all_thr_record.append(thr_record)
+        all_file_record.append(network_file)
     return all_time_record, all_thr_record
 
 
